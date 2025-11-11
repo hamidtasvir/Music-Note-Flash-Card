@@ -1,0 +1,185 @@
+/* ===== General Layout ===== */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e6f0ff, #fdfbfb);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0;
+  touch-action: manipulation; /* Prevent double-tap zoom on mobile */
+}
+
+/* ===== Wrapper ===== */
+.wrapper {
+  text-align: center;
+  padding: 20px 30px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 90%;
+}
+
+/* ===== Clef Buttons ===== */
+#clefs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  font-weight: 600;
+  gap: 6px;
+}
+
+#clefs > * {
+  background-color: #f73e05;
+  color: white;
+  border-radius: 5px;
+  height: 35px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  user-select: none;
+}
+
+#clefs > *:hover,
+#clefs > *:active {
+  background-color: #ff6b3d;
+  transform: scale(1.05);
+}
+
+/* ===== Note Buttons (A–G) ===== */
+#selectNotes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 3px;
+  gap: 5px;
+}
+
+.selectNotes {
+  height: 40px;
+  width: 40px;
+  background-color: royalblue;
+  color: white;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s, transform 0.1s;
+  user-select: none;
+}
+
+.selectNotes:hover,
+.selectNotes:active {
+  background-color: #3a7dff;
+  transform: translateY(-2px);
+}
+
+/* ===== Image and Cover ===== */
+#pngs {
+  margin: 20px 0;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  max-width: 100%;
+  height: auto;
+}
+
+#cover {
+  width: 220px;
+  z-index: 999;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 6px;
+  height: 136px;
+  display: none;
+}
+
+/* ===== Input Field ===== */
+#write {
+  padding: 5px 14px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 2px solid #ccd8ff;
+  outline: none;
+  width: 140px;
+  text-align: center;
+  transition: all 0.25s ease;
+  background: #f8faff;
+  color: #333;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+#write:focus {
+  border-color: royalblue;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(65, 105, 225, 0.3);
+  transform: scale(1.05);
+}
+
+#write::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* ===== Text Styling ===== */
+.head {
+  font-size: 26px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+}
+
+.info {
+  color: #555;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 10px 0 0;
+  letter-spacing: 0.3px;
+  opacity: 0.9;
+}
+
+/* ===== Answer Feedback ===== */
+#answer {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 12px;
+  min-height: 28px;
+  transition: all 0.3s ease;
+}
+
+.correct {
+  color: #2ecc71;
+  text-shadow: 0 0 5px rgba(46, 204, 113, 0.4);
+  animation: pop 0.25s ease;
+}
+
+.wrong {
+  color: #e74c3c;
+  text-shadow: 0 0 5px rgba(231, 76, 60, 0.4);
+  animation: pop 0.25s ease;
+}
+
+/* Small pop animation for feedback */
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  .head { font-size: 22px; }
+  #clefs > * { height: 32px; font-size: 14px; }
+  .selectNotes { height: 38px; width: 38px; font-size: 16px; }
+  #write { width: 120px; font-size: 16px; }
+}
