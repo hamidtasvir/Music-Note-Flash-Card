@@ -2,7 +2,7 @@
 
 A simple flash card app to practice note recognition.
 
-https://raw.githubusercontent.com/hamidtasvir/Music-Note-Flash-Card/main/pix/Piano%20music%20notes%20app.jpg
+<p align="center"> <img src="pix/PianoMusicNotesApp.jpg" width="600" alt="Piano music notes app" /> </p>
 
 How to run:
 1. Open index.html in a browser (or use a local static server).
